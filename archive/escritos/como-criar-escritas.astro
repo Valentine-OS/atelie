@@ -1,0 +1,118 @@
+---
+import Layout from '../../src/layouts/Layout.astro';
+const modelo = `---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Minha nova escrita — Ateliê">
+  <main id="conteudo" class="article-page">
+    <a class="back-link" href="/#escritos">← Voltar aos escritos</a>
+    <div class="article-heading" id="top">
+      <div class="eyebrow">NOTAS DE LEITURA</div>
+      <h1>Uma pergunta que <em>ficou comigo.</em></h1>
+      <p>Uma breve apresentação do que quero explorar.</p>
+    </div>
+    <article class="prose" style="max-width:640px;margin:auto">
+      <p class="lead">Começo com a pergunta que motivou esta página.</p>
+      <h2 id="primeira-ideia">Uma primeira ideia</h2>
+      <p>Aqui desenvolvo o pensamento, com minhas próprias palavras.</p>
+      <a href="/#escritos">← Voltar aos escritos</a>
+    </article>
+  </main>
+</Layout>`;
+const blocos = `<p>Um parágrafo com <em>ênfase</em> e <strong>destaque</strong>.</p>
+<h2 id="pergunta">Uma nova pergunta</h2>
+<blockquote>Uma passagem para contemplar.</blockquote>
+<a href="/artigo/#processo">Uma conexão com outro escrito</a>
+<ul>
+  <li>Uma observação.</li>
+  <li>Outra possibilidade.</li>
+</ul>`;
+const imagem = `<figure>
+  <img src="/images/meu-desenho.webp"
+    alt="Descrição do que aparece no desenho" loading="lazy" />
+  <figcaption>Uma legenda e, quando houver, autoria e fonte.</figcaption>
+</figure>`;
+const video = `<video controls preload="none" poster="/images/capa-video.webp"
+  style="width:100%">
+  <source src="https://seu-servidor.example/video.mp4" type="video/mp4" />
+</video>`;
+const card = `{n:'05', tag:'NOTAS DE LEITURA',
+ title:'Uma pergunta que ficou comigo',
+ desc:'Uma breve apresentação da escrita.',
+ date:'28 SET 2026', time:'3 MIN',
+ img:'meu-desenho.webp', cls:'wide',
+ href:'/minha-nova-escrita/'} `;
+---
+<Layout title="Como dar forma a uma nova escrita — Ateliê">
+  <main id="conteudo" class="article-page">
+    <a class="back-link" href="/#escritos">← Voltar aos escritos</a>
+    <div class="article-heading" id="top">
+      <div class="eyebrow">NA MESA DE TRABALHO · GUIA DO ATELIÊ</div>
+      <h1>Como dar forma<br/>a uma <em>nova escrita.</em></h1>
+      <p>Da primeira pergunta à página no ar.<br/>Um guia para voltar sempre que quiser escrever.</p>
+      <div class="post-meta">28 SETEMBRO 2026 <span>·</span> GUIA PRÁTICO</div>
+    </div>
+    <div class="reading-grid">
+      <aside aria-label="Nesta página">
+        <span class="eyebrow">NESTA PÁGINA</span>
+        <a href="#comecar">Começar com uma pergunta</a>
+        <a href="#arquivo">Criar a página</a>
+        <a href="#blocos">Compor o texto</a>
+        <a href="#midias">Imagens e vídeos</a>
+        <a href="#conexoes">Conectar e apresentar</a>
+        <a href="#revisar">Revisar e publicar</a>
+        <span class="aside-flower">✳</span>
+      </aside>
+      <article class="prose guide">
+        <p class="lead" id="comecar">Uma escrita pode começar com algo pequeno: uma frase que ficou, uma dúvida depois de uma leitura ou uma ideia que você ainda não sabe explicar.</p>
+        <p>Antes de abrir o editor, anote três coisas: o que chamou sua atenção, o que você pensa sobre isso e qual pergunta continua aberta. Essas anotações já podem ser a primeira versão de uma página.</p>
+        <blockquote>Nem tudo precisa estar pronto<br/>para ganhar forma.</blockquote>
+        <p>Escolha um título provisório. Escreva uma abertura que situe o leitor, desenvolva uma ou duas ideias e termine com o que ficou em aberto. Um texto curto também tem lugar aqui. Quando retomar um escrito, registre a data de atualização se a mudança for importante.</p>
+        <div class="margin-note"><span>✧ COMO O SITE FUNCIONA HOJE</span><p>Este protótipo usa páginas <code>.astro</code>, com conteúdo escrito em HTML. Markdown, MDX e cadastro automático de artigos ainda não foram configurados. O caminho abaixo funciona com a estrutura que já existe.</p></div>
+        <h2 id="arquivo">1. Dar um endereço à ideia</h2>
+        <p>Abra a pasta <code>C:\Users\Urso\Documents\Site</code> no seu editor. Dentro de <code>src/pages</code>, crie <code>minha-nova-escrita.astro</code>. Use nomes em minúsculas, sem espaços ou acentos, separados por hífens.</p>
+        <p>Esse arquivo dará origem ao endereço <code>/minha-nova-escrita/</code>. Copie o modelo abaixo e substitua o título, a apresentação e os parágrafos. O componente <code>Layout</code> já fornece cabeçalho, fontes, fundo, busca e rodapé.</p>
+        <pre><code>{modelo}</code></pre>
+        <p>O trecho entre os primeiros <code>---</code> importa o layout. Depois dele vem o conteúdo visual. O atributo <code>title</code> do layout é o nome da aba do navegador; o <code>h1</code> é o título que aparece na página.</p>
+        <h2 id="blocos">2. Compor a página, um bloco por vez</h2>
+        <p>Dentro de <code>article class="prose"</code>, combine parágrafos, subtítulos, citações e links. A classe <code>prose</code> aplica o estilo de leitura do ateliê.</p>
+        <pre><code>{blocos}</code></pre>
+        <p>Use apenas um <code>h1</code> por página. Divida os assuntos principais com <code>h2</code> e, quando necessário, use <code>h3</code> dentro dessas seções. Um <code>id</code> dá um endereço à seção: <code>/minha-nova-escrita/#pergunta</code>.</p>
+        <p>Para um texto longo com índice lateral, use <code>src/pages/artigo.astro</code> ou esta própria página como referência. Os links do índice precisam corresponder aos IDs dos subtítulos.</p>
+        <div class="margin-note"><span>✧ UMA NOTA SOBRE FONTES</span><p>Ao citar um autor, diferencie a transcrição literal da sua interpretação. Registre obra, edição e página quando disponíveis. Uma ideia inspirada em Jung, por exemplo, não deve aparecer entre aspas como se fosse uma frase dele.</p></div>
+        <h2 id="midias">3. Abrir espaço para imagens e vídeos</h2>
+        <p>Coloque uma imagem em <code>public/images/meu-desenho.webp</code>. Na página, o endereço começa em <code>/images/</code>, sem incluir a pasta <code>public</code>.</p>
+        <pre><code>{imagem}</code></pre>
+        <p>O texto em <code>alt</code> descreve o conteúdo para quem não vê a imagem. A legenda acrescenta contexto e créditos. Exporte imagens em um tamanho adequado para a leitura; as imagens desta estrutura, colocadas em <code>public</code>, são servidas como estão, sem otimização automática.</p>
+        <p>Para vídeos grandes, use uma hospedagem de mídia externa. Você pode colar o código de incorporação fornecido pelo serviço ou usar um endereço direto de vídeo com o bloco abaixo. Os endereços deste exemplo são fictícios e precisam ser substituídos.</p>
+        <pre><code>{video}</code></pre>
+        <p>Prefira controles visíveis e reprodução acionada pelo leitor. Quando a fala for parte do conteúdo, ofereça legendas ou uma transcrição. Fluxos e diagramas também podem começar como imagens com descrição; não é necessário tornar todo elemento interativo.</p>
+        <h2 id="conexoes">4. Fazer a escrita encontrar outras</h2>
+        <p>Inclua links no ponto em que uma ideia se conecta a outra. Uma leitura pode levar a uma pergunta antiga; um texto novo pode aprofundar um parágrafo que antes ficou breve. Depois de criar a página, volte ao escrito anterior e acrescente o caminho de volta quando fizer sentido.</p>
+        <p>Para mostrar o novo texto na página inicial, abra <code>src/pages/index.astro</code> e adicione um objeto à lista <code>posts</code>, no início do arquivo. Separe os objetos por vírgulas.</p>
+        <pre><code>{card}</code></pre>
+        <p>Em <code>href</code>, informe o endereço da página; em <code>img</code>, o nome de uma imagem existente em <code>public/images</code>. O campo <code>n</code> é o número impresso no cartão, e <code>time</code> é uma estimativa manual de leitura. Use <code>cls:'wide'</code> para o tratamento de imagem padrão.</p>
+        <p>A busca atual também é manual: em <code>src/layouts/Layout.astro</code>, procure <code>id="results"</code> e acrescente um link para o novo texto dentro desse bloco. Criar a página, por enquanto, não atualiza automaticamente a lista inicial nem a busca.</p>
+        <h2 id="revisar">5. Ver a página antes de publicar</h2>
+        <p>No terminal, dentro da pasta do projeto, execute:</p>
+        <pre><code>npm run dev</code></pre>
+        <p>Abra o endereço informado no terminal e acrescente <code>/minha-nova-escrita/</code>. Se o servidor já estiver rodando, basta salvar o arquivo e abrir a página. Confira a leitura em uma janela larga e em uma estreita, os links, as legendas e o carregamento das imagens.</p>
+        <p>Antes de preparar a publicação, gere a versão estática:</p>
+        <pre><code>npm run build</code></pre>
+        <p>O resultado fica em <code>dist</code>. Um build bem-sucedido confirma a geração das páginas, mas não garante que todas as fontes, URLs externas ou informações do texto estejam corretas. Essa revisão continua sendo editorial.</p>
+        <p>O GitHub Pages ainda não está configurado neste projeto. Salvar ou executar o build não publica o site na internet. Quando configurarmos a publicação, o envio ao repositório poderá acionar a geração e o deploy automaticamente.</p>
+        <div class="margin-note"><span>✧ SE PREFERIR ESCREVER ACOMPANHADO</span><p>Você também pode trazer um rascunho e pedir: “Crie uma escrita com este texto, preserve minha voz, use esta imagem e conecte com aquela página”. O conteúdo pode nascer em qualquer editor; a composição entra depois.</p></div>
+        <p>Comece com uma página que você gostaria de reencontrar. A próxima versão pode esperar uma nova leitura, uma conversa ou uma pergunta melhor.</p>
+        <div class="end-mark">— ✧ —</div>
+        <a class="ink-button" href="/#escritos">Voltar aos escritos <span>↗</span></a>
+      </article>
+    </div>
+  </main>
+</Layout>
+<style>
+  .guide { min-width: 0; }
+  .guide pre { max-width: 100%; overflow-x: auto; padding: 20px; background: #e9ecdf; border: 1px solid var(--line); line-height: 1.7; }
+  .guide code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; overflow-wrap: anywhere; }
+  .guide pre code { overflow-wrap: normal; }
+  .guide p a { text-decoration: underline; text-underline-offset: 4px; }
+</style>
