@@ -1,0 +1,125 @@
+/* A separate, local mobile composition. Desktop remains governed by its styles. */
+@media (max-width: 700px) {
+  .site { padding-inline: 24px; }
+  .site > header {
+    height: 72px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgb(245 242 233 / 94%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  header .brand { font-size: 32px; }
+  header nav { gap: 22px; font-size: 12px; }
+  header nav a { display: inline-flex; min-height: 44px; align-items: center; }
+  .hero { isolation: isolate; }
+  .hero .hero-art {
+    height: clamp(245px, 37svh, 335px);
+    margin-top: 12px;
+  }
+  .hero .hero-art img {
+    height: 108%;
+    width: 108%;
+    max-width: 108%;
+    flex-shrink: 0;
+    object-fit: contain;
+    filter: saturate(.8);
+  }
+  .hero .hero-art .orbit { width: 225px; height: 225px; opacity: .65; }
+  .hero .hero-art .orbit-two { width: 252px; height: 252px; opacity: .35; }
+  .hero .hero-art .vertical-note { font-size: 7px; right: -8px; letter-spacing: 1.7px; }
+  .hero .hero-art .art-caption { bottom: -20px; right: 0; font-size: 12px; }
+  .hero .hero-art .star-one { top: 26px; right: 12px; }
+  .hero .hero-art .star-two { bottom: 23px; left: 4px; font-size: 28px; }
+  .hero .hero-copy { padding-top: 42px; padding-bottom: 28px; }
+  .hero .hero-copy > .eyebrow { font-size: 8px; letter-spacing: 1.6px; }
+  .hero .hero-copy h1 {
+    font-size: clamp(42px, 11.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -1.7px;
+    margin: 18px 0 20px;
+  }
+  .hero .hero-copy > p { font-size: 14px; line-height: 1.8; max-width: 37ch; }
+  .hero .ink-button { min-height: 52px; padding: 14px 23px; gap: 45px; font-size: 13px; margin-top: 14px; }
+  .hero .hero-note { font-size: 17px; line-height: 1.45; margin-top: 25px; }
+  .ribbon { margin-top: 0; padding-block: 20px; gap: 18px; font-size: 8px; line-height: 1.85; }
+  .ribbon span:first-child,.ribbon span:nth-child(3) { flex: 1; }
+  .about { padding: 45px 0; gap: 18px; }
+  .about > img { width: 63px; margin-top: 35px; }
+  .about h2 { font-size: 30px; line-height: 1.08; }
+  .about p { font-size: 13px; line-height: 1.85; }
+  .about .eyebrow { font-size: 8px; letter-spacing: 1px; }
+  footer { gap: 15px 20px; padding-block: 25px; }
+  footer p { flex-basis: calc(100% - 100px); font-size: 11px; line-height: 1.6; }
+  footer > a:not(.brand) { min-height: 44px; display: inline-flex; align-items: center; font-size: 11px; }
+  footer small { font-size: 9px; max-width: 180px; text-align: right; }
+
+  .manifesto section { scroll-margin-top: 92px; }
+  .manifesto .manifesto-opening { padding-top: 24px; padding-bottom: 30px; }
+  .manifesto .manifesto-kicker { font-size: 8px; letter-spacing: 1px; align-items: start; }
+  .manifesto .manifesto-kicker span:last-child { max-width: 125px; }
+  .manifesto .manifesto-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    position: relative;
+    isolation: isolate;
+    min-height: 425px;
+    margin: 20px -12px 10px;
+  }
+  .manifesto .manifesto-hero-grid h1 {
+    grid-area: 1 / 1;
+    align-self: end;
+    padding: 95px 12px 12px;
+    margin: 0;
+    z-index: 2;
+    font-size: clamp(56px, 14.8vw, 94px);
+    line-height: .94;
+    letter-spacing: -2px;
+    background: linear-gradient(0deg, var(--paper) 4%, rgb(245 242 233 / 97%) 49%, rgb(245 242 233 / 0%) 100%);
+  }
+  .manifesto .hero-ink {
+    grid-area: 1 / 1;
+    align-self: start;
+    justify-self: end;
+    width: 82%;
+    max-width: 360px;
+    margin: 0;
+    z-index: 1;
+  }
+  .manifesto .hero-ink img { height: 365px; object-position: center top; filter: saturate(.55); }
+  .manifesto .hero-ink:before { inset: 9% 6% 12% 8%; transform: rotate(5deg); }
+  .manifesto .hero-ink figcaption { display: none; }
+  .manifesto .opening-bottom { gap: 15px; align-items: center; }
+  .manifesto .opening-bottom p { font-size: 14px; line-height: 1.75; }
+  .manifesto .opening-bottom a { min-width: 44px; min-height: 48px; text-align: center; border: 1px solid var(--line); padding: 0; }
+  .manifesto .argument { padding-block: 42px; gap: 22px; }
+  .manifesto .argument-label { font-size: 10px; letter-spacing: 1.35px; }
+  .manifesto .argument h2 { font-size: clamp(35px, 9.5vw, 48px); line-height: 1.08; text-wrap: balance; }
+  .manifesto .argument p { font-size: 22px; line-height: 1.6; }
+  .manifesto .argument .emphasis { padding-left: 19px; font-size: 26px; line-height: 1.35; margin-top: 28px; }
+  .manifesto .manifesto-dark { margin-inline: -24px; padding: 35px 24px; }
+  .manifesto .manifesto-dark h2 { font-size: clamp(40px, 11vw, 60px); line-height: 1.04; }
+  .manifesto .dark-copy p { font-size: 14px; line-height: 1.8; }
+  .manifesto .illustrated-argument .argument-side > img:not(.coco-margin) { width: 100%; max-width: 390px; margin: 25px auto 0; filter: saturate(.65); }
+  .manifesto .manifesto-image { margin-inline: -24px; }
+  .manifesto .manifesto-image img { border: 0; }
+  .manifesto .manifesto-image figcaption { padding-inline: 24px; font-size: 9px; line-height: 1.6; }
+  .manifesto .fiction small { font-size: 11px; line-height: 1.7; display: block; }
+  .manifesto .interruption { padding-block: 40px; }
+  .manifesto .interruption p { font-size: clamp(35px, 9.5vw, 48px); line-height: 1.1; text-wrap: balance; }
+  .manifesto .positions li { font-size: 14px; line-height: 1.8; padding-left: 7px; }
+  .manifesto .manifesto-ending h2 { font-size: clamp(42px, 11vw, 62px); line-height: 1.06; }
+  .manifesto .manifesto-ending p { font-size: 14px; }
+  .manifesto .manifesto-ending a { min-height: 48px; font-size: 13px; }
+}
+@media (max-width: 360px) {
+  .site { padding-inline: 20px; }
+  .hero .hero-copy h1 { font-size: 10.8vw; }
+  .manifesto .manifesto-hero-grid { min-height: 385px; }
+  .manifesto .hero-ink img { height: 330px; }
+  .manifesto .manifesto-hero-grid h1 { font-size: 14.5vw; }
+  .manifesto .manifesto-dark { margin-inline: -20px; padding-inline: 20px; }
+  .manifesto .manifesto-image { margin-inline: -20px; }
+  .manifesto .manifesto-image figcaption { padding-inline: 20px; }
+}
