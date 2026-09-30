@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://valentine-os.github.io',
-  base: process.env.GITHUB_ACTIONS === 'true' ? '/atelie' : '/',
+  site: 'https://lurzzo.com',
+  base: '/',
   trailingSlash: 'always',
 });
