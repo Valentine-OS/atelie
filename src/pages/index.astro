@@ -1,5 +1,138 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/mobile.css';
+import '../styles/essay.css';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Layout><main id="conteudo"><section class="hero" id="top"><div class="hero-copy"><div class="eyebrow"><span class="tiny-star">✧</span> UM ESPAÇO ABERTO AO MUNDO</div><h1>Nem tudo precisa<br/>estar pronto<br/><em>para ganhar forma.</em></h1><p>Um espaço para reunir leituras, perguntas e descobertas sobre nós e o mundo. Ideias que se encontram e mudam com o tempo.</p><a class="ink-button" href={import.meta.env.BASE_URL.replace(/\/$/, '') + '/sobre/'}>Leia o manifesto <span>↗</span></a><div class="hero-note"><span>✧</span> Há em nós mais do que conhecemos.</div></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-star star-one">✦</span><span class="art-star star-two">✧</span><span class="art-star star-three">✳</span><span class="vertical-note">OBSERVAR · EXPERIMENTAR · COMPREENDER</span><img src={import.meta.env.BASE_URL.replace(/\/$/, '') + '/images/richeh.png'} alt="Richeh, de Witch Hat Atelier, com cabelos e capa flutuando" fetchpriority="high"/><span class="art-caption">Fig. 01 · a curiosidade em movimento</span></div></section><div class="ribbon"><span>ENTRE O QUE SOMOS E O QUE DESCOBRIMOS</span><span>✦</span><span>NEM TUDO EM NÓS VEIO À LUZ</span><span>✦</span><span>O MUNDO AINDA TEM MUITO A ENSINAR</span></div><section class="about" id="sobre"><img src={import.meta.env.BASE_URL.replace(/\/$/, '') + '/images/coco.webp'} alt="Coco voando com sua capa azul" loading="lazy"/><div><div class="eyebrow">UM OLHAR EM CONSTANTE DESCOBERTA</div><h2>Um ateliê é um lugar<br/>onde as coisas <em>podem acontecer.</em></h2><p>Este é meu espaço para reunir o que descubro, conectar ideias e deixar rastros do caminho. Entre código, livros e tentativas, sigo aprendendo a olhar.</p><span class="signature">Há sempre algo por descobrir.</span></div><span class="about-star">✧</span></section></main></Layout>
+<Layout
+  title="O que nos faz voltar | Ateliê"
+  description="Um ensaio visual sobre presença, memória e o modo como o online passou a desenhar o real."
+  pageClass="essay-page"
+>
+  <main id="conteudo" class="essay">
+    <section class="essay-hero" id="top">
+      <div class="essay-hero-copy">
+        <p class="essay-index">ATELIÊ / ENSAIO 01</p>
+        <h1>Há coisas que nos alimentam.<br/><em>Há presenças que nos fazem voltar.</em></h1>
+        <p class="essay-lead">O online nos ensinou a chegar mais rápido a quase tudo. No caminho, talvez tenhamos confundido aquilo que recebemos com aquilo que realmente buscávamos. Saber a diferença é uma forma de reconhecer o que tem valor.</p>
+        <a class="essay-enter" href="#encanto">Entrar no círculo <span>↓</span></a>
+      </div>
+      <figure class="essay-hero-art">
+        <span class="spell-ring ring-one"></span><span class="spell-ring ring-two"></span>
+        <span class="essay-star star-a">✦</span><span class="essay-star star-b">✧</span>
+        <img src={base + '/images/richeh.png'} alt="Richeh, de Witch Hat Atelier, envolta por linhas em movimento" fetchpriority="high"/>
+        <figcaption>Fig. 01 · aquilo que não cabe na entrega</figcaption>
+      </figure>
+    </section>
+
+    <div class="essay-ribbon" aria-hidden="true"><span>O QUE FOI VIVIDO</span><i>✦</i><span>O QUE FOI REGISTRADO</span><i>✦</i><span>O QUE FICOU DE FORA</span></div>
+
+    <section class="essay-chapter wonder" id="encanto">
+      <div class="chapter-mark"><span>01</span><span>COCO / O ENCANTO</span></div>
+      <div class="wonder-art"><span class="wonder-orbit"></span><img src={base + '/images/coco.webp'} alt="Coco avançando com a capa aberta" loading="lazy"/></div>
+      <div class="chapter-copy">
+        <p class="chapter-kicker">Parecia magia.</p>
+        <h2>Tudo podia <em>permanecer.</em></h2>
+        <p>Guardamos vozes para que o tempo não as levasse. Fotografias, conversas e versões de nós encontraram abrigo. A distância perdeu parte do seu peso e o conhecimento atravessou fronteiras. Por um instante, pareceu que nada precisaria desaparecer.</p>
+        <p>O encanto era verdadeiro. Ainda é. A ferramenta ampliava o que podíamos fazer, mas também nos ensinava um ritmo. Toda conveniência carrega uma maneira de esperar, lembrar, escolher e encontrar o outro. Quase nunca percebemos o que aprendemos com aquilo que apenas parecia nos servir.</p>
+      </div>
+    </section>
+
+    <section class="spell-statement">
+      <div class="broken-circle" aria-hidden="true"><span></span></div>
+      <p class="essay-index">UM FEITIÇO DISCRETO</p>
+      <h2>Primeiro levamos a vida para a tela.<br/><em>Depois trouxemos a lógica da tela de volta conosco.</em></h2>
+      <p>O digital não mudou apenas o modo como mostramos o mundo. Mudou nossa pressa, nossa memória, a maneira de aprender, desejar e encontrar o outro. Não vivemos apenas diante de telas. Aos poucos, começamos a esperar que a vida respondesse como elas.</p>
+    </section>
+
+    <figure class="memory-frame">
+      <img src={base + '/images/scene.jpg'} alt="Duas aprendizes frente a frente, cercadas pelo movimento de suas capas" loading="lazy"/>
+      <blockquote>“Uma ferramenta não escolhe apenas o caminho mais curto.<br/>Com o tempo, pode nos fazer esquecer que havia outros.”</blockquote>
+      <figcaption>Witch Hat Atelier / Kamome Shirahama · o conflito também acontece fora do quadro</figcaption>
+    </figure>
+
+    <section class="essay-chapter measure" id="medida">
+      <figure class="measure-art"><span class="draft-line line-a"></span><span class="draft-line line-b"></span><img src={base + '/images/agott.webp'} alt="Agott segura uma pena diante da superfície em que desenha" loading="lazy"/><figcaption>Agott / a precisão pode virar medida</figcaption></figure>
+      <div class="chapter-copy">
+        <div class="chapter-mark"><span>02</span><span>AGOTT / A MEDIDA</span></div>
+        <h2>Quando a ferramenta começou a ensinar o que esperar do mundo.</h2>
+        <div class="measured-lines" aria-label="Exemplos de como o online passou a orientar o real">
+          <span>Esperar passou a parecer desperdício.</span>
+          <span>Não saber passou a exigir resposta imediata.</span>
+          <span>Estar distante passou a parecer abandono.</span>
+          <span>O que não pode ser medido começou a parecer irrelevante.</span>
+        </div>
+        <p>Acostumamo-nos a esperar que o mundo respondesse na velocidade de uma interface. O problema não é a velocidade, mas o momento em que ela se torna uma medida moral: o lento parece inútil, o difícil parece defeituoso e aquilo que não se oferece imediatamente parece não ter valor.</p>
+      </div>
+    </section>
+
+    <aside class="double-loss">
+      <p>Quando a resposta chega antes que a pergunta encontre sua forma,</p>
+      <strong>o pensamento que seguiria outro caminho não parece perdido. Ele simplesmente nunca chega a existir.</strong>
+    </aside>
+
+    <section class="screen-life">
+      <div class="screen-copy">
+        <p class="essay-index">03 / O INTERVALO QUE DESAPARECE</p>
+        <h2>A resposta começou a chegar antes da pergunta.</h2>
+        <p>A música é recomendada antes que o silêncio produza um desejo. O caminho aparece antes que possamos nos perder. O resumo chega antes do livro. A frase se completa antes que o pensamento descubra aonde pretendia ir.</p>
+        <p>A conveniência é real. Mas nem toda dificuldade é um defeito do caminho. Algumas hesitações são o lugar onde uma voz começa a tomar forma. Quando eliminamos cedo demais esse intervalo, recebemos uma solução e nunca descobrimos aquilo que tentaríamos construir.</p>
+      </div>
+      <figure class="panel-window"><img src={base + '/images/panel.jpg'} alt="Painel em preto e branco de Witch Hat Atelier, usado como fragmento de memória" loading="lazy"/><figcaption>Nem toda demora é ausência. Às vezes, é formação.</figcaption></figure>
+    </section>
+
+    <section class="choice" id="impasse">
+      <p class="essay-index">04 / O IMPASSE</p>
+      <h2>Desaparecer<br/><em>ou adaptar-se.</em></h2>
+      <div class="choice-grid">
+        <article><span>01</span><h3>Desaparecer</h3><p>Sair promete devolver o silêncio e uma vida sem testemunhas. Mas também pode nos afastar de conversas, trabalho, memória e pessoas que aprenderam a existir conosco do outro lado da tela.</p></article>
+        <div class="choice-knot" aria-hidden="true">✳</div>
+        <article><span>02</span><h3>Adaptar-se</h3><p>Permanecer preserva acesso, encontro e participação. Mas adaptar-se a cada nova velocidade também cobra uma forma. Aos poucos, podemos confundir aquilo que somos com aquilo que a ferramenta consegue compreender, medir e devolver.</p></article>
+      </div>
+      <p class="choice-verdict">Talvez nenhuma das duas escolhas nos devolva inteiros. Talvez inteiros nunca tenhamos sido.</p>
+    </section>
+
+    <section class="refusal" id="presenca">
+      <div class="refusal-copy">
+        <div class="chapter-mark"><span>05</span><span>RICHEH / A RECUSA</span></div>
+        <h2>Permanecer sem entregar o próprio traço.</h2>
+        <p>Richeh não recusa o mundo. Recusa apenas a ideia de que já exista uma forma pronta para ela dentro dele. Aprende o círculo, reconhece suas linhas e ainda assim procura uma abertura.</p>
+        <p>Talvez seja essa a posição possível: habitar o online sem pertencer completamente a ele. Tocar a ferramenta sem permitir que ela se torne a medida de tudo o que pode ser vivido.</p>
+      </div>
+      <figure class="refusal-art"><span class="open-ring"></span><img src={base + '/images/richeh.png'} alt="Richeh ultrapassa os limites do círculo desenhado ao seu redor" loading="lazy"/><figcaption>O traço continua seu quando ainda pode atravessar a margem.</figcaption></figure>
+    </section>
+
+    <section class="ending">
+      <p class="essay-index">ATELIÊ / UMA POSIÇÃO EM CONSTRUÇÃO</p>
+      <h2>Habitar sem pertencer completamente.</h2>
+      <div class="ending-lines"><p>Receber ajuda sem entregar a pergunta.</p><p>Aprender sem fazer do método a fronteira do imaginável.</p><p>Usar a ferramenta sem oferecer a ela nossa capacidade de escolher.</p></div>
+      <blockquote>Alguns pensamentos precisam permanecer sem assistência por tempo suficiente para revelar qual pergunta estavam tentando fazer.</blockquote>
+      <p class="last-line">Fechar a tela não devolve o mundo.<br/><em>Mas talvez nos devolva o intervalo em que um caminho ainda pode se tornar nosso.</em></p>
+
+      <article class="author-note">
+        <div class="author-note-heading">
+          <p class="essay-index">NOTA DO AUTOR / INVENTÁRIO DAS PARTIDAS</p>
+          <h3>Algumas despedidas não pedem um túmulo.<br/><em>Pedem espaço.</em></h3>
+        </div>
+
+        <div class="author-note-body">
+          <p>Não fui apenas me tornando menos disponível. Saí do X, do LinkedIn, do Facebook e do Discord. Apaguei o WhatsApp. Deixei de ter um número de telefone. Por fim, doei o celular, antes uma extensão do corpo, a alguém para quem ele ainda pudesse servir. Não era um gesto contra o mundo. Era uma tentativa de descobrir quanto de mim continuava existindo quando eu já não podia ser imediatamente alcançado.</p>
+
+          <p>Também doei dezenas de livros e me desfiz de outros. Eles não perderam o valor. Talvez justamente o contrário: já haviam chegado, aberto o que podiam abrir e cumprido seu tempo comigo. Ainda assim, aos poucos, volto a comprar livros. Não sei explicar por completo. Talvez o desprendimento não seja aprender a não desejar, mas permitir que o desejo deixe de ser um inventário.</p>
+
+          <p>Algo semelhante acontece com objetos tecnológicos e coisas que um dia colecionei. Cada entrega contém um pequeno luto, não apenas pelo objeto, mas pela pessoa que fui ao escolhê-lo. Procuro deixá-los com quem talvez reconheça neles aquilo que um dia reconheci. Como se o cuidado pudesse sobreviver à posse.</p>
+
+          <p>Escrevo do interior dessa contradição. Sou profundamente ligado à tecnologia e fascinado pelo que rompe formas, mas também fui soterrado pela obrigação de estar disponível para a próxima ruptura. Oscilo entre a anestesia e a fuga. Mesmo me tornando inacessível, continuo tentando ser para os outros um lugar de repouso. Hoje entendo que a corregulação não acontece quando alguém se transforma em chão para todos. Ela exige reciprocidade: duas presenças capazes de emprestar segurança uma à outra sem que nenhuma precise desaparecer.</p>
+
+          <p>Em <cite>Frieren</cite>, encontro um tempo que ensina tarde. Às vezes só depois da partida compreendemos o tamanho de uma presença. Na voz de Aurora, encontro o movimento contrário ao da máquina: algo que não quer otimizar a experiência, apenas devolvê-la ao corpo, ao medo, à natureza e ao assombro. Não são respostas. São companhias para perguntas que ainda não terminaram.</p>
+
+          <p>Não ofereço esta retirada como ética, exemplo ou solução. O silêncio pode proteger, mas também pode isolar. Guardar pode sufocar, mas algumas coisas guardadas sustentam uma memória. Ainda não sei se estou desaparecendo ou apenas escolhendo melhor aquilo que pode me alcançar.</p>
+        </div>
+
+        <p class="author-note-close">Sei apenas que toda partida deixa um contorno.<br/><em>Talvez eu tente novamente, não retomando o que passou, mas encontrando quem ainda não chegou.</em></p>
+      </article>
+
+      <a href="#top" class="ending-return">Voltar ao que ainda está aqui ↑</a>
+    </section>
+  </main>
+</Layout>
